@@ -1,0 +1,37 @@
+<img src="../../../assets/images/footer.jpg" class="image" alt="" srcset="">
+<div class="footer">
+    <img src="../../../assets/images/logo.png" class="icon" alt="">
+    <div class="container">
+        <div class="item">
+            <h3 class="title">Address</h3>
+            <p>
+                Jobify Inc Canada. 545 Younge St, Suite 11 Toronto, Ontario M4K 6F4
+            </p>
+        </div>
+        <div class="item">
+            <h3 class="title">Contact Us</h3>
+            <p>
+                (+71) 897648934 demo123@gmail.com
+            </p>
+
+        </div>
+        <div class="item">
+            <h3 class="title">Newsletter</h3>
+            <form [formGroup]="emailForm">
+                <div class="example-container">
+                    <mat-form-field>
+                        <mat-label>Enter your email</mat-label>
+                        <input matInput placeholder="pat@example.com" formControlName="email">
+                        <mat-error *ngIf="emailForm.get('email')?.hasError('required')">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <button mat-raised-button type="submit" class="dark">Subscribe</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="copyright">
+    <p>
+        © 2023 All Rights Reserved. Design by Mostafa Mohamed Khalifa Html Template
+    </p>
+</div>

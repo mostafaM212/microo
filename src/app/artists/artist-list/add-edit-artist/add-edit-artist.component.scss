@@ -1,0 +1,73 @@
+@import "../../../../colors.scss";
+.container {
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.inline-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imgContainer {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: $dartLight;
+  margin-bottom: 30px;
+}
+
+.imgContainer:hover {
+  cursor: pointer;
+  color: $third;
+}
+
+.mat-form-field {
+  width: 48%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: $dartLight;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  border-radius: 10px;
+  flex-direction: column;
+  // background-color: aquamarine;
+  // border: 2px solid #ccc;
+  // box-shadow: 1px 2px 2px rgb(0, 0, 0.5);
+  // overflow: hidden;
+}
+
+.banner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: -1;
+  width: 100%;
+}

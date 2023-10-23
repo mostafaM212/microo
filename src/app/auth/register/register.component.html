@@ -1,0 +1,93 @@
+<form [formGroup]="registerForm">
+    <div class="loginContainer">
+        <div class="logoContainer">
+            <img src="../../../assets/images/logo.png" class="img" alt="">
+            <h2 class="title">Register</h2>
+            <button mat-icon-button (click)="onClose()">
+          <mat-icon class="mat-18" style="color: aliceblue;">close</mat-icon>
+      </button>
+        </div>
+        <div class="content">
+            <div class="inline-flex">
+                <mat-form-field class="example-full-width">
+                    <mat-label>First Name</mat-label>
+                    <!-- <span matPrefix>+1 &nbsp;</span> -->
+                    <input type="text" matInput placeholder="First Name" formControlName="firstName">
+                    <mat-icon matSuffix>person</mat-icon>
+                    <mat-error>this field is required</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Last Name</mat-label>
+                    <!-- <span matPrefix>+1 &nbsp;</span> -->
+                    <input type="text" matInput placeholder="Last Name" formControlName="lastName">
+                    <mat-icon matSuffix>person</mat-icon>
+                    <mat-error>this field is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="inline-flex">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <!-- <span matPrefix>+1 &nbsp;</span> -->
+                    <input type="email" matInput placeholder="example@web.com" formControlName="email">
+                    <mat-icon matSuffix>mail</mat-icon>
+                    <mat-error>this field is required</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Phone</mat-label>
+                    <!-- <span matPrefix>+1 &nbsp;</span> -->
+                    <input type="tel" matInput placeholder="" formControlName="phone">
+                    <mat-icon matSuffix>phone</mat-icon>
+                    <mat-error>this field is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="inline-flex">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" #password formControlName="password">
+                    <button class="icon" *ngIf="password.value" matSuffix mat-icon-button aria-label="Clear" (click)="password.value=''">
+                    <mat-icon >close</mat-icon>
+                  </button>
+                    <mat-error>this field is required</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Repeat Password</mat-label>
+                    <input matInput type="password" #repeated formControlName="repeatPassword">
+                    <button class="icon" *ngIf="repeated.value" matSuffix mat-icon-button aria-label="Clear" (click)="repeated.value=''">
+                      <mat-icon >close</mat-icon>
+                    </button>
+                    <mat-error>this field is required</mat-error>
+                    <mat-error *ngIf="registerForm.errors?.['invalid']">this field is required</mat-error>
+
+                </mat-form-field>
+            </div>
+            <div class="inline-flex">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Address</mat-label>
+                    <!-- <span matPrefix>+1 &nbsp;</span> -->
+                    <input type="text" matInput placeholder="full address" formControlName="address">
+                    <mat-icon matSuffix>email</mat-icon>
+                    <mat-error>this field is required</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Country</mat-label>
+                    <mat-select formControlName="country">
+                        <mat-option *ngFor="let country of countries" [value]="country">{{country}}</mat-option>
+                    </mat-select>
+                    <mat-error>this field is required</mat-error>
+                </mat-form-field>
+
+            </div>
+            <div class="inline-flex">
+                <mat-form-field class="example">
+                    <mat-label>visa</mat-label>
+                    <!-- <span matPrefix>+1 &nbsp;</span> -->
+                    <input type="text" matInput placeholder="full address" formControlName="visa">
+                    <mat-icon matSuffix>visa</mat-icon>
+                    <mat-error>this field is required</mat-error>
+                </mat-form-field>
+            </div>
+            <a href="" style="align-self: flex-start;">You Already an Email ?</a>
+        </div>
+        <button mat-button type="submit" style="color: aliceblue; background-color: #a32149;" (click)="onRegister()">Register</button>
+    </div>
+</form>

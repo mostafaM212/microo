@@ -1,0 +1,44 @@
+<div class="musicContainer" *ngIf="music">
+    <div class="musicContainer">
+        <div class="item">
+            <mat-icon>headphones</mat-icon>
+            <span class="title">{{music.title}}</span>
+        </div>
+        <div class="item">
+            <mat-icon>event</mat-icon>
+            <span class="content">{{music.createdAt | date : 'medium'}}</span>
+        </div>
+        <div class="item">
+            <mat-icon>groups</mat-icon>
+            <span class="content">{{music.rating}}</span>
+        </div>
+        <div class="item" *ngIf="mssapPlaylist.length">
+            <ngx-audio-player style="flex-direction: row;" [autoPlay]="false" muted="muted" [playlist]="mssapPlaylist" [disablePositionSlider]="mssapDisablePositionSlider" [displayRepeatControls]="mssapDisplayRepeatControls" [displayVolumeControls]="mssapDisplayVolumeControls"
+                [displayVolumeSlider]="mssapDisplayVolumeSlider" [displayTitle]="mssapDisplayTitle" [displayArtist]="music.artist.name" (trackEnded)="onEnded($event)">
+
+            </ngx-audio-player>
+        </div>
+        <div class="item">
+            <!-- <mat-icon>person</mat-icon> -->
+            <span class="description">{{music.description}}</span>
+
+        </div>
+
+    </div>
+    <div class="artistContainer">
+        <div class="imageContainer">
+            <img [src]="music.artist.image" [alt]="music.artist.name" srcset="">
+        </div>
+        <div class="">
+            <h1 class="title">
+                {{music.artist.name}}
+            </h1>
+        </div>
+        <div class="dateAndRating">
+            <span>Birth : {{music.artist.dateOfBirth | date : 'dd/MM/YYYY'}}</span>
+            <span>rating : {{music.artist.rating}}</span>
+        </div>
+        <div class="description">{{music.artist.description}}</div>
+
+    </div>
+</div>

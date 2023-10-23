@@ -1,0 +1,116 @@
+<div class="">
+
+    <img src="../../../assets/images/banner2.jpg" class="banner" alt="">
+    <div class="header">
+        <div class="headerTitle">
+            <h1 class="title">The Air Mic
+            </h1>
+            <p style="margin: 20px 0px ;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sint quidem reiciendis sit vitae repudiandae numquam maiores, delectus minima omnis recusandae accusamus aperiam atque tempore culpa quo? Dolorum, sint voluptatum.</p>
+            <div class="btnContainer">
+                <div class="btn">
+                    Book Now
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <img src="../../../assets/images/right_side.png" class="right_side" alt="">
+        </div>
+    </div>
+    <div class="services">
+        <h2>Our Services</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus dolore ad saepe voluptates quae! Neque error, aliquid deleniti ullam dignissimos consectetur. Aliquid quos, nobis deserunt debitis nulla asperiores nesciunt voluptate?</p>
+        <div class="cardContainer">
+            <div class="serviceImage">
+                <div class="imageContainer">
+                    <img src="../../../assets/images/service1.png" class="" alt="" srcset="">
+                </div>
+                <h3>Mic Line</h3>
+                <p>
+                    There are many variations of passages mmajority have suffered alteration in some form, by injected humour, or
+                </p>
+            </div>
+            <div class="serviceImage">
+                <div class="imageContainer">
+                    <img src="../../../assets/images/service2.png" class="" alt="" srcset="">
+                </div>
+                <h3>Mic Stand</h3>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or</p>
+            </div>
+            <div class="serviceImage">
+                <div class="imageContainer">
+                    <img src="../../../assets/images/service3.png" class="" alt="" srcset="">
+                </div>
+                <h3>Head mic</h3>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="about">
+        <h2 class="aboutTitle">About Us</h2>
+        <div class="aboutContainer">
+            <div class="">
+                <p style="margin-bottom: 10px; font-size: 15px; color: #fff;">
+                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up
+                    one of the more obscureContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
+                    College in Virginia, looked up one of the more obscure
+                </p>
+                <div class="btnContainer">
+                    <div class="btn">
+                        Reed More
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <img src="../../../assets/images/about_img.jpg" class="aboutImage" alt="" srcset="">
+            </div>
+        </div>
+    </div>
+    <div class="ourMics">
+        <div class="mics">
+            <h2>Our Services</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus dolore ad saepe voluptates quae! Neque error, aliquid deleniti ullam dignissimos consectetur. Aliquid quos, nobis deserunt debitis nulla asperiores nesciunt voluptate?</p>
+        </div>
+
+    </div>
+    <div class="ourMics">
+        <div class="mics2">
+            <div class="item ">
+                <img src="../../../assets/images/mics_img1.jpg" class="img" alt="" srcset="">
+            </div>
+            <div class="item">
+                <img src="../../../assets/images/mics_img2.jpg" class="img" alt="" srcset="">
+            </div>
+            <div class="item">
+                <img src="../../../assets/images/mics_img3.jpg" class="img" alt="" srcset="">
+            </div>
+            <div class="item">
+                <img src="../../../assets/images/mics_img4.jpg" class="img" alt="" srcset="">
+            </div>
+            <div class="item">
+                <img src="../../../assets/images/mics_img5.jpg" class="img" alt="" srcset="">
+            </div>
+            <div class="item">
+                <img src="../../../assets/images/mics_img6.jpg" class="img" alt="" srcset="">
+            </div>
+        </div>
+    </div>
+    <div class="testimonial">
+        <h1 style="text-align: center; color: #fff;font-weight: bold;">Our Clients Says</h1>
+        <p style="text-align: center; color: #fff;">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from</p>
+        <div class="headerTitle" [@easeOut]="state">
+            <img src="../../../assets/images/test.png" style="width: 30px; height: 30px;" alt="" srcset="">
+            <div class="content">
+                <img src="../../../assets/images/icon.png" style="width: 30px; height: 30px;align-self: start;" alt="">
+                <p>{{activeMessage}}</p>
+                <img src="../../../assets/images/icon_right.png" style="width: 30px; height: 30px;align-self: end;" alt="">
+            </div>
+        </div>
+        <div class="btnContainer" style="justify-content: center;">
+            <div class="sayCotainer" (click)="setActiveMessage(0)" [ngClass]="{'active': activeIndex === 0}"></div>
+            <div class="sayCotainer" (click)="setActiveMessage(1)" [ngClass]="{'active': activeIndex === 1}"></div>
+            <div class="sayCotainer" (click)="setActiveMessage(2)" [ngClass]="{'active': activeIndex === 2}"></div>
+        </div>
+    </div>
+</div>

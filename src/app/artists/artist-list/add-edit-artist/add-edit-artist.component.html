@@ -1,0 +1,57 @@
+<img src="../../../assets/images/banner2.jpg" class="banner" alt="">
+<div class="container">
+    <div class="form-container">
+        <div class="titleContainer">
+            <h1 class="titleContainer">New Artist</h1>
+        </div>
+        <form [formGroup]="artistForm">
+            <div class="content">
+                <div class="inline-flex">
+                    <ng-container *ngIf="!imageUrl">
+                        <div class="imgContainer content" (click)="input.click()">
+                            <mat-icon>photo_camera</mat-icon>
+                            <input type="file" style="display: none;" #input (change)="onSelectFile($event)">
+
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="imageUrl">
+                        <div class="imgContainer content">
+                            <img [src]="imageUrl" width="75px" height="75px" style="border-radius: 50%;" alt="" srcset="">
+                        </div>
+                    </ng-container>
+
+                </div>
+                <div class="inline-flex">
+                    <mat-form-field class="mat-form-field" appearance="fill">
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="Artist Name" formControlName="name">
+                        <mat-icon matSuffix>star</mat-icon>
+                        <mat-error>this field is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mat-form-field">
+                        <mat-label>Date of Birth</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                        <mat-error>this field is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="inline-flex">
+                    <mat-form-field class="example-full-width" style="width: 500px;">
+                        <mat-label>Leave a comment</mat-label>
+                        <textarea matInput placeholder="description" formControlName="description"></textarea>
+                        <mat-error>this field is required</mat-error>
+
+                    </mat-form-field>
+                </div>
+                <div class="inline-flex">
+                    <button mat-raised-button (click)="save()">
+                      <mat-icon >add</mat-icon>
+                      save
+                  </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

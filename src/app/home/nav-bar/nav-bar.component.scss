@@ -1,0 +1,39 @@
+@import "../../../colors.scss";
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  padding: 40px;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  background: none;
+}
+
+.icon {
+  width: 150px;
+  height: 50px;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+.icon-tab {
+  width: 35px;
+  height: 22px;
+}
+
+::ng-deep .item {
+  color: $secondary;
+}
+
+mat-menu {
+  background-color: $third;
+}
+
+.brown {
+  color: $third;
+}

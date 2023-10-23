@@ -1,0 +1,37 @@
+<!-- [ngStyle]="{backgroundColor : darkColor ? '' : '#a32149' }" -->
+<mat-toolbar>
+    <img *ngIf="showImage" src="../../../assets/images/logo.png" class="icon" alt="" (click)="navigate()">
+    <span class="spacer"></span>
+    <ng-container *ngIf="!authService.isAuthenticated$.getValue()">
+        <button mat-icon-button (click)="openRegisterDialog()">
+        <mat-icon >person_add</mat-icon>
+    </button>
+        <button mat-icon-button (click)="openLoginDialog()">
+          <mat-icon >person</mat-icon>
+      </button>
+    </ng-container>
+    <ng-container *ngIf="authService.isAuthenticated$.getValue()">
+        <button mat-button [matMenuTriggerFor]="menu" style="color: #fef4ea;" class="item"><mat-icon class="me-2">person</mat-icon>{{authService.user$.getValue()?.firstName + ' ' + authService.user$.getValue()?.lastName}}
+      </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/auth/profile">
+          <mat-icon>person</mat-icon>
+          <span style="font-size: smaller;color: brawn;" >Profile</span></button>
+            <button mat-menu-item (click)="navigateUser()">
+            <mat-icon>mic</mat-icon>
+            <span style="font-size: smaller;">Artist</span></button>
+            <button mat-menu-item [routerLink]="['musics','add']">
+              <mat-icon>
+                music_note
+                </mat-icon>
+              <span style="font-size: smaller;">Music</span></button>
+            <button mat-menu-item (click)="logoutHandler()">
+          <mat-icon>logout</mat-icon>
+          <span style="font-size: smaller;">logout</span></button>
+        </mat-menu>
+    </ng-container>
+
+    <button mat-icon-button (click)="onToggle()">
+      <img src="../../../assets/images/menu_btn.png" class="icon-tab" alt="" >
+  </button>
+</mat-toolbar>

@@ -1,0 +1,35 @@
+<form [formGroup]="loginForm">
+    <div class="loginContainer">
+        <div class="logoContainer">
+            <img src="../../../assets/images/logo.png" class="img" alt="">
+            <h2 class="title">Login</h2>
+            <button mat-icon-button (click)="onClose()">
+            <mat-icon class="mat-18">close</mat-icon>
+        </button>
+        </div>
+        <div class="content">
+            <div class="example-full-width">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <!-- <span matPrefix>+1 &nbsp;</span> -->
+                    <input type="email" matInput placeholder="example@web.com" formControlName="email">
+                    <mat-icon matSuffix>mail</mat-icon>
+                    <mat-error>this field is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="example-full-width">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" #password formControlName="password">
+                    <button class="icon" *ngIf="password.value" matSuffix mat-icon-button aria-label="Clear" (click)="password.value=''">
+                <mat-icon >close</mat-icon>
+              </button>
+                    <mat-error>this field is required</mat-error>
+
+                </mat-form-field>
+            </div>
+            <a href="" style="align-self: flex-start;">you forget password ?</a>
+        </div>
+        <button mat-button type="submit" style="color: aliceblue;" (click)="onLogin()">login</button>
+    </div>
+</form>

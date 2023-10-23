@@ -1,0 +1,273 @@
+@import "../../../colors.scss";
+.banner {
+  height: 800px;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-top: 80px;
+}
+
+.right_side {
+  width: 500px;
+  height: 700px;
+}
+
+.title {
+  font-size: 64px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  background: #ffffff;
+  color: #000;
+  max-width: 200px;
+  height: 61px;
+  line-height: 61px;
+  width: 100%;
+  font-size: 17px;
+  text-align: center;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: ease-in all 0.5s;
+}
+
+.services {
+  margin-top: 15px;
+  padding-top: 40px;
+  padding-bottom: 50px;
+  background: #fff;
+  h2 {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 55px;
+    color: #181616;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  p {
+    margin: 0px;
+    padding: 0;
+    font-weight: 400;
+    text-align: center;
+    font-size: 17px;
+    line-height: 28px;
+  }
+  .cardContainer {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-row-gap: 15px;
+    h3 {
+      display: block;
+      font-size: 1.17em;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      font-weight: bold;
+      text-align: center;
+    }
+    p {
+      font-size: 15px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  }
+  .serviceImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .card {
+  }
+  .contentView {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .imageContainer {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: linear-gradient(
+      139deg,
+      rgba(167, 19, 49, 1) 6%,
+      rgba(138, 21, 171, 1) 96%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 55px;
+      height: 100px;
+    }
+  }
+}
+
+.about {
+  background: linear-gradient(to left, #8f1588 4%, #8316cc 32%);
+  padding: 40px 15px;
+}
+
+.aboutTitle {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 55px;
+  color: #fff;
+  padding-bottom: 10px;
+}
+
+.ourMics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mics {
+  width: 80%;
+  h2,
+  p {
+    text-align: center;
+  }
+}
+
+.mics2 {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.item {
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #b0130c 35%, #8316cc 60%);
+  // padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  img {
+    border-radius: 50%;
+    text-align: center;
+    width: 98%;
+    height: 98%;
+  }
+  .img {
+  }
+  .img:hover {
+    cursor: pointer;
+    opacity: 25%;
+  }
+}
+
+.active {
+  background-color: $base;
+}
+
+.micsIcon {
+  opacity: 0;
+  margin: 0 auto;
+  position: absolute;
+  top: 15px;
+  text-align: center;
+  left: 30px;
+  right: 30px;
+  bottom: 15px;
+  background: #ffffff9c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease-in all 0.5s;
+}
+
+.btn:hover {
+  background: #8f1588;
+  color: #fff;
+  transition: ease-in all 0.5s;
+  cursor: pointer;
+}
+
+.aboutContainer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 5px;
+  overflow: hidden;
+}
+
+.aboutImage {
+  height: 300px;
+  width: 400px;
+  border-radius: 40px;
+}
+
+.headerTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 80px;
+  text-align: left;
+  color: #fff;
+}
+
+.testimonial {
+  margin-top: 10px;
+  padding-top: 80px;
+  padding-bottom: 142px;
+  background: rgb(154, 20, 91);
+  background: linear-gradient(
+    62deg,
+    rgba(154, 20, 91, 1) 12%,
+    rgba(149, 20, 109, 1) 19%,
+    rgba(137, 21, 160, 1) 30%,
+    rgba(127, 22, 202, 1) 100%
+  );
+}
+
+.content {
+  width: 70%;
+  height: 100px;
+  background-color: #fff;
+  color: $gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 35px;
+}
+
+.sayCotainer {
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 6px;
+}
+
+.sayCotainer:hover {
+  background-color: #8316cc;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #8316cc;
+}

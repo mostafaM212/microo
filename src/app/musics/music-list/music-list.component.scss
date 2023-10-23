@@ -1,0 +1,68 @@
+@import "../../../colors.scss";
+.banner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: -1;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: $dartLight;
+    font-weight: bold;
+  }
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  padding: 0px 20px;
+}
+
+.musicCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  // background-color: aqua;
+  border-radius: 20px;
+  .imgContainer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 100px;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+}
+
+.musicCard:hover {
+  background-color: $secondary;
+  cursor: pointer;
+}
+
+.content-data {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

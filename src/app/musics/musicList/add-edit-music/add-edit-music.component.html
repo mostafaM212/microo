@@ -1,0 +1,68 @@
+<img src="../../../assets/images/banner2.jpg" class="banner" alt="">
+<div class="container">
+    <div class="form-container">
+        <div class="titleContainer">
+
+            <h1 class="titleContainer">New Music</h1>
+        </div>
+        <form [formGroup]="musicForm">
+            <div class="content">
+                <div class="inline-flex">
+                    <ng-container *ngIf="!imageUrl">
+                        <div class="imgContainer content" (click)="input.click()">
+                            <mat-icon>music_note</mat-icon>
+                            <input type="file" style="display: none;" #input (change)="onSelectFile($event)">
+
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="imageUrl">
+                        <div class="imgContainer content">
+                            <img [src]="imageUrl" width="75px" height="75px" style="border-radius: 50%;" alt="" srcset="">
+                        </div>
+                    </ng-container>
+
+                </div>
+                <div class="inline-flex">
+                    <mat-form-field class="mat-form-field" appearance="fill">
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Artist Name" formControlName="title">
+                        <mat-icon matSuffix>radio</mat-icon>
+                        <mat-error>this field is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Artist</mat-label>
+                        <mat-select formControlName="artist">
+                            <mat-option *ngFor="let artist of artists$ | async" [value]="artist._id">
+                                {{artist.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error>this field is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="inline-flex">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Music description</mat-label>
+                        <textarea matInput placeholder="description" formControlName="description"></textarea>
+                        <mat-error>this field is required</mat-error>
+
+                    </mat-form-field>
+                </div>
+                <div class="inline-flex">
+                    <button mat-raised-button (click)="save()" [disabled]="showSpinner">
+                      <mat-icon *ngIf="!showSpinner">add</mat-icon>
+                      <mat-progress-spinner *ngIf="showSpinner" diameter="10px"/>
+                      save
+                  </button>
+                </div>
+            </div>
+        </form>
+        <ng-container *ngIf="showSpinner">
+            <div class="" style="margin-top: 10px; width: 100%;">
+                <mat-progress-bar mode="determinate" [value]="(loaded / total) * 100"></mat-progress-bar>
+                <span>100%</span>
+            </div>
+        </ng-container>
+
+
+    </div>
+</div>

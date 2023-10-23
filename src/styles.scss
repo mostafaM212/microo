@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+// @import "~material-icons/iconfont/material-icons.css";
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: #666666;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.80857;
+  font-weight: normal;
+  overflow-x: hidden;
+}

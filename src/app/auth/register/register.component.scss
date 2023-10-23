@@ -1,0 +1,56 @@
+@import "../../../colors.scss";
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+
+.logoContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $third;
+  padding: 20px 40px;
+}
+
+.img {
+  width: 100px;
+  height: 50px;
+}
+
+.title {
+  color: #ffff;
+  font-weight: bold;
+}
+
+.icon {
+  color: #ffff;
+}
+
+.content {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
+  // padding: 20px;
+  .example-full-width {
+    width: 48%;
+    // margin: 20px;
+  }
+  .example {
+    width: 100%;
+  }
+}
+
+.inline-flex {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

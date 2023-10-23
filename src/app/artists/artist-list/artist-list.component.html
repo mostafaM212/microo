@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="header">
+        <mat-icon style="color: #450275;">headphones</mat-icon>
+        <h1 style="margin: 0px;">Artist List</h1>
+    </div>
+    <div class="content-container">
+        <div class="musicCard" *ngFor="let artist of artists$ | async">
+            <div class="imgContainer" [routerLink]="['view' , artist._id]">
+                <img [src]="artist.image" [alt]="artist.name" srcset="">
+            </div>
+            <div class="">
+                <h3>{{artist.name}}</h3>
+            </div>
+            <div class="content-data">
+                <h6>{{artist.dateOfBirth | date : 'dd/MM/YYYY'}}</h6>
+                <h6>rating : {{artist.rating}}</h6>
+            </div>
+        </div>
+    </div>
+</div>
