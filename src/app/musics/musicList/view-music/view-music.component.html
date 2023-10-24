@@ -12,10 +12,22 @@
             <mat-icon>groups</mat-icon>
             <span class="content">{{music.rating}}</span>
         </div>
-        <div class="item" *ngIf="mssapPlaylist.length">
-            <ngx-audio-player style="flex-direction: row;" [autoPlay]="false" muted="muted" [playlist]="mssapPlaylist" [disablePositionSlider]="mssapDisablePositionSlider" [displayRepeatControls]="mssapDisplayRepeatControls" [displayVolumeControls]="mssapDisplayVolumeControls"
-                [displayVolumeSlider]="mssapDisplayVolumeSlider" [displayTitle]="mssapDisplayTitle" [displayArtist]="music.artist.name" (trackEnded)="onEnded($event)">
-
+        <div class="item">
+            <mat-icon>headset_mic</mat-icon>
+            <span class="content">{{music.numberOfListeners}}</span>
+        </div>
+        <div class="item" *ngIf="displayFavoritesButton()">
+            <button mat-button (click)="onClick()">
+            <mat-icon >add</mat-icon>
+          <span style="color: aliceblue;">favorite</span>
+          </button>
+        </div>
+        <div class="item" *ngIf="!displayFavoritesButton()">
+            <mat-icon style="color: red;">favorite</mat-icon>
+        </div>
+        <div class="item" *ngIf="playlist.length">
+            <ngx-audio-player style="flex-direction: row;" [autoPlay]="true" [playlist]="playlist" [disablePositionSlider]="mssapDisablePositionSlider" [displayRepeatControls]="mssapDisplayRepeatControls" [displayVolumeControls]="mssapDisplayVolumeControls" [displayVolumeSlider]="mssapDisplayVolumeSlider"
+                [displayTitle]="mssapDisplayTitle" [displayArtist]="music.artist.name" [displayRepeatControls]="true" (trackEnded)="triggerOnEnded($event)">
             </ngx-audio-player>
         </div>
         <div class="item">

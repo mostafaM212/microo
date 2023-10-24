@@ -15,6 +15,11 @@ router.post(
   multerMusicMiddleware,
   musicController.addMusic
 );
+
+router.put(
+  "/:id/updateNumberOfListeners",
+  musicController.updateNumberOfListeners
+);
 router.put("/:id", authMiddleware, musicController.updateMusic);
 router.delete("/:id", authMiddleware, musicController.deleteMusic);
 

@@ -11,7 +11,7 @@ import { ArtistService } from 'src/app/services/artist.service';
 })
 export class ViewArtistComponent implements OnInit, OnDestroy {
   _unsubscribe$ = new Subject<boolean>();
-  artist!: Artist;
+  artist!: any;
 
   constructor(
     private artistService: ArtistService,
@@ -31,15 +31,13 @@ export class ViewArtistComponent implements OnInit, OnDestroy {
       .getArtist(id)
       .pipe(
         tap((data) => {
-          this.artist = data.artist;
+          this.artist = data.artist[0];
         }),
         takeUntil(this._unsubscribe$)
       )
       .subscribe();
   }
   ngOnDestroy(): void {
-    console.log('test', 'asdasd');
-
     this._unsubscribe$.next(true);
     this._unsubscribe$.complete();
   }

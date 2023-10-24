@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environment/environment';
 import { Music } from '../models/music';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +11,7 @@ import { Music } from '../models/music';
 export class MusicService {
   musics$ = new BehaviorSubject<Music[]>([]);
   baseUrl: string = environment.backendUrl + 'musics';
+  addToFavorites = environment.backendUrl + 'users/addFavorite';
   constructor(private http: HttpClient) {}
 
   getMusics() {
@@ -36,6 +38,16 @@ export class MusicService {
       this.baseUrl + '/' + id,
       data
     );
+  }
+  addMusicToFavorites(musicId: string) {
+    // console.log('test', musicId);
+
+    return this.http.put(this.addToFavorites, { musicId });
+  }
+  updateMusicNumberOfListeners(id: string, numberOfListeners: number) {
+    return this.http.put(this.baseUrl + '/' + id + '/updateNumberOfListeners', {
+      numberOfListeners,
+    });
   }
   deleteMusics(id: string) {
     return this.http.delete(this.baseUrl + '/' + id);

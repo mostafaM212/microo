@@ -18,8 +18,6 @@ exports.getArtists = (req, res, next) => {
 };
 
 exports.getArtist = (req, res, next) => {
-  console.log("test", req.params.id);
-
   Artist.aggregate([
     {
       $match: { _id: new mongoose.Types.ObjectId(req.params.id) },
@@ -32,10 +30,16 @@ exports.getArtist = (req, res, next) => {
         as: "musics",
       },
     },
+    {
+      $project: {
+        name: 1,
+        image: 1,
+        rating: 1,
+        musics: 1,
+      },
+    },
   ])
     .then((data) => {
-      console.log("test", data);
-
       return res.status(200).json({
         message: "artist",
         artist: data,

@@ -8,6 +8,7 @@ var musicSchema = new Schema(
     path: { type: String, required: true },
     artist: { type: mongoose.Types.ObjectId, required: true, ref: "Artist" },
     rating: { type: Number, default: 0 },
+    numberOfListeners: { type: Number, default: 0 },
   },
   { timestamps: true }
 );

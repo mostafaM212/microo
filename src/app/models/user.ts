@@ -7,4 +7,5 @@ export interface User {
   country: string;
   visa?: string;
   createdAt: Date;
+  favorites: string[];
 }

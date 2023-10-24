@@ -1,0 +1,36 @@
+@import "../../../colors.scss";
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-column-gap: 20px;
+}
+
+.imageContainer {
+  img {
+    width: 400px;
+    height: 350px;
+    margin-top: 50px;
+    border-radius: 20px;
+  }
+}
+
+h1 {
+  color: $dartLight;
+  font-weight: bold;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.goback {
+}
+
+.goback:hover {
+  color: $darkBlue;
+  cursor: pointer;
+}

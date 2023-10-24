@@ -16,7 +16,7 @@ export class ArtistService {
     return this.http.get<{ message: string; artists: Artist[] }>(this.baseUrl);
   }
   getArtist(id: string) {
-    return this.http.get<{ message: string; artist: Artist }>(
+    return this.http.get<{ message: string; artist: any[] }>(
       this.baseUrl + '/' + id
     );
   }

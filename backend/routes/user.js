@@ -11,12 +11,8 @@ router.post("", usersController.addUser);
 router.post("/login", usersController.loginUser);
 
 router.get("/:id", usersController.getUser);
-router.put(
-  "/:id",
-
-  authMiddleware,
-  usersController.updateUser
-);
+router.put("/addFavorite", authMiddleware, usersController.addToFavor);
+router.put("/:id", authMiddleware, usersController.updateUser);
 router.delete("/:id", authMiddleware, usersController.deleteUser);
 
 module.exports = router;

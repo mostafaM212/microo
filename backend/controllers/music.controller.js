@@ -46,7 +46,6 @@ exports.addMusic = (req, res, next) => {
     path: url + "/images/music/" + req.file.filename,
   });
   console.log("test", music);
-
   music
     .save()
     .then((data) => {
@@ -63,13 +62,13 @@ exports.addMusic = (req, res, next) => {
     });
 };
 
-exports.updateMusic = (req, res, next) => {
+exports.updateNumberOfListeners = (req, res, next) => {
   // const errors = validationResult(req);
 
-  if (errors) {
-    return req.status(400).json(errors.array);
-  }
-  Music.updateOne({ _id: req.params.id }, { ...req.body })
+  Music.updateOne(
+    { _id: req.params.id },
+    { numberOfListeners: req.body.numberOfListeners }
+  )
     .then((data) => {
       return res.status(200).json({
         message: "artists",
@@ -83,7 +82,23 @@ exports.updateMusic = (req, res, next) => {
       });
     });
 };
+exports.updateMusic = (req, res, next) => {
+  // const errors = validationResult(req);
 
+  Music.updateOne({ _id: req.params.id }, { ...req.body })
+    .then((data) => {
+      return res.status(200).json({
+        message: "music",
+        music: data,
+      });
+    })
+    .catch((e) => {
+      console.log("test", e);
+      return res.status(500).json({
+        message: "Error On Fetch data",
+      });
+    });
+};
 exports.deleteMusic = (req, res, next) => {
   Music.deleteOne({ _id: req.params.id })
     .then((data) => {

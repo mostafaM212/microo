@@ -3,18 +3,21 @@
         <mat-icon style="color: #450275;">headphones</mat-icon>
         <h1 style="margin: 0px;">Music List</h1>
     </div>
-    <div class="content-container">
-        <!-- <div class="musicCard" *ngFor="let music of musics$ | async">
-            <div class="imgContainer" [routerLink]="['view' , music._id]">
-                <img [src]="music.artist.image" [alt]="music.artist.name" srcset="">
+    <div class="content-container" *ngIf="artist">
+        <div class="musicCard" *ngFor="let music of artist.musics">
+            <div class="imgContainer" [routerLink]="[ '/musics','view' , music._id]">
+                <img [src]="artist.image" [alt]="artist.name" srcset="">
             </div>
             <div class="">
                 <h3>{{music.title}}</h3>
             </div>
             <div class="content-data">
-                <h6>{{music.artist.name}}</h6>
+                <h6>{{artist.name}}</h6>
                 <h6>rating : {{music.rating}}</h6>
             </div>
-        </div> -->
+        </div>
     </div>
+    <app-no-data *ngIf="artist.length  > 0">
+        <p>There is No data On This Page</p>
+    </app-no-data>
 </div>

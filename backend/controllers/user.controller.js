@@ -61,7 +61,30 @@ exports.deleteUser = (req, res, next) => {
     message: "",
   });
 };
+exports.addToFavor = (req, res, next) => {
+  let userData = req.authData;
 
+  console.log("test", userData, req.body);
+
+  User.updateOne(
+    { _id: userData._id },
+    {
+      $push: { favorites: { _id: req.body.musicId } },
+    }
+  )
+    .then((data) => {
+      return res.status(200).json({
+        message: "",
+        user: data,
+      });
+    })
+    .catch((e) => {
+      console.log("test", e);
+      return res.status(500).json({
+        message: "error in data",
+      });
+    });
+};
 exports.loginUser = (req, res, next) => {
   let userData = null;
   User.findOne({ email: req.body.email }).then((user) => {
@@ -99,6 +122,8 @@ exports.loginUser = (req, res, next) => {
 };
 
 returnUserData = (userData) => {
+  // console.log("test", userData);
+
   return {
     _id: userData._id,
     email: userData.email,
@@ -109,5 +134,6 @@ returnUserData = (userData) => {
     address: userData.address,
     visa: userData.visa,
     createdAt: userData.createdAt,
+    favorites: userData.favorites,
   };
 };

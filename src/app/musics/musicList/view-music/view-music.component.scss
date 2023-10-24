@@ -57,11 +57,15 @@
   }
 }
 
-ngx-audio-player {
-  flex-direction: row;
+::ng-deep ngx-audio-player {
   ::ng-deep .ngx-d-flex {
     flex-direction: row;
   }
+}
+
+.player {
+  min-width: 450px;
+  max-width: 600px;
 }
 
 .description {

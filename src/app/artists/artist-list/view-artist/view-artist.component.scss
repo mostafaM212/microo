@@ -53,6 +53,13 @@
       border-radius: 50%;
     }
   }
+  h3 {
+    color: $dartLight;
+    font-weight: bold;
+  }
+  h6 {
+    color: $dartLight;
+  }
 }
 
 .musicCard:hover {

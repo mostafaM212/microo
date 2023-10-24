@@ -17,10 +17,10 @@
             <button mat-menu-item routerLink="/auth/profile">
           <mat-icon>person</mat-icon>
           <span style="font-size: smaller;color: brawn;" >Profile</span></button>
-            <button mat-menu-item (click)="navigateUser()">
+            <button mat-menu-item [routerLink]="[ 'add','artist' ]">
             <mat-icon>mic</mat-icon>
             <span style="font-size: smaller;">Artist</span></button>
-            <button mat-menu-item [routerLink]="['musics','add']">
+            <button mat-menu-item [routerLink]="['add' , 'music']">
               <mat-icon>
                 music_note
                 </mat-icon>

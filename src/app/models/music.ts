@@ -8,4 +8,5 @@ export interface Music {
   createdAt?: Date;
   rating?: number;
   path: string;
+  numberOfListeners?: number;
 }
